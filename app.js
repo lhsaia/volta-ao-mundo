@@ -71,6 +71,9 @@ let currentCountryCode = '';
 let currentCountryName = '';
 let currentCoords = [0, 0];
 
+// Detecta se está rodando em ambiente local (localhost ou 127.0.0.1)
+const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+
 // Novos elementos do formulário de edição
 const sidebarViewMode = document.getElementById('sidebar-view-mode');
 const sidebarEditMode = document.getElementById('sidebar-edit-mode');
@@ -81,6 +84,11 @@ const inputYoutubeUrl = document.getElementById('input-youtube-url');
 const inputSongName = document.getElementById('input-song-name');
 const inputArtistName = document.getElementById('input-artist-name');
 const inputArtistImage = document.getElementById('input-artist-image');
+
+// Oculta o botão de edição se não estiver localmente
+if (!isLocal && btnEditMode) {
+    btnEditMode.style.display = 'none';
+}
 
 // Fecha a barra lateral ao clicar no botão de fechar
 closeSidebarBtn.addEventListener('click', () => {
@@ -350,11 +358,25 @@ function onEachFeature(feature, layer) {
                 currentCountryName = displayName;
                 currentCoords = [e.latlng.lat, e.latlng.lng];
 
-                // Abre diretamente no Modo de Edição
-                switchToEditMode();
-                clearEditForm();
                 clearSongDetails();
                 if (sidebarCountryName) sidebarCountryName.textContent = displayName;
+
+                if (isLocal) {
+                    // Abre diretamente no Modo de Edição no local
+                    switchToEditMode();
+                    clearEditForm();
+                } else {
+                    // No GitHub Pages, mostra apenas um texto indicando que não há música
+                    switchToViewMode();
+                    if (sidebarArtistName) sidebarArtistName.textContent = 'Sem músicas vinculadas';
+                    if (spotifyPlayerWrapper) {
+                        spotifyPlayerWrapper.innerHTML = `
+                            <div style="text-align: center; color: var(--text-secondary); padding: 20px 0; border: 1px dashed rgba(255,255,255,0.1); border-radius: 8px;">
+                                <p style="margin: 0; font-size: 0.9rem;">Cadastros e edições só podem ser feitos a partir do painel administrativo local.</p>
+                            </div>
+                        `;
+                    }
+                }
                 if (sidebar) sidebar.classList.remove('hidden');
             }
         }
