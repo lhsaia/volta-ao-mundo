@@ -341,3 +341,14 @@ countries:
     coords:
       - 23.41534214830711
       - 77.34375000000001
+  FRA:
+    name: France
+    song: Démocrassie
+    artist: Trust
+    artist_image: >-
+      https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGwGG1lncEjgLU7e9skaB0AS9gPHYmgM8EnJePUEpb8A&s=10
+    youtube_url: https://www.youtube.com/watch?v=yVCGcJ3Y2s8
+    youtube_id: yVCGcJ3Y2s8
+    coords:
+      - 46.809855903672556
+      - 2.2851562500000004

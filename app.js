@@ -99,8 +99,24 @@ map.on('click', (e) => {
 
 // Helper para obter o código identificador da feature (país ou estado)
 function getFeatureCode(feature) {
-    if (feature.properties['ISO3166-1-Alpha-3']) {
-        return feature.properties['ISO3166-1-Alpha-3'];
+    let code = feature.properties['ISO3166-1-Alpha-3'];
+
+    // Corrige erro de dados do GeoJSON onde alguns países vêm com código "-99"
+    if (code === '-99' && feature.properties.name) {
+        const nameMap = {
+            'France': 'FRA',
+            'Norway': 'NOR',
+            'Somaliland': 'SOM',
+            'Kosovo': 'XKX',
+            'Northern Cyprus': 'CYN'
+        };
+        if (nameMap[feature.properties.name]) {
+            code = nameMap[feature.properties.name];
+        }
+    }
+
+    if (code && code !== '-99') {
+        return code;
     }
     // Brasil (sigla do estado, ex: AC, SP)
     if (feature.properties.sigla) {
