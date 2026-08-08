@@ -71,8 +71,9 @@ let currentCountryCode = '';
 let currentCountryName = '';
 let currentCoords = [0, 0];
 
-// Detecta se está rodando em ambiente local (localhost ou 127.0.0.1)
-const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+// Detecta se está rodando em ambiente local (WAMP, XAMPP, Localhost, etc.)
+// É considerado local se o endereço não terminar com ".github.io" e não for carregado via protocolo "file:"
+const isLocal = !window.location.hostname.endsWith('.github.io') && window.location.hostname !== '' && window.location.protocol !== 'file:';
 
 // Novos elementos do formulário de edição
 const sidebarViewMode = document.getElementById('sidebar-view-mode');
@@ -344,40 +345,33 @@ function onEachFeature(feature, layer) {
                     duration: 1.2
                 });
 
-                resetHighlightStyle();
-                activeHighlightedFeature = layer;
-                
-                layer.setStyle({
-                    fillColor: '#00f2fe',
-                    fillOpacity: 0.5,
-                    weight: 2,
-                    color: '#00f2fe'
-                });
-
-                currentCountryCode = code;
-                currentCountryName = displayName;
-                currentCoords = [e.latlng.lat, e.latlng.lng];
-
-                clearSongDetails();
-                if (sidebarCountryName) sidebarCountryName.textContent = displayName;
-
                 if (isLocal) {
+                    resetHighlightStyle();
+                    activeHighlightedFeature = layer;
+                    
+                    layer.setStyle({
+                        fillColor: '#00f2fe',
+                        fillOpacity: 0.5,
+                        weight: 2,
+                        color: '#00f2fe'
+                    });
+
+                    currentCountryCode = code;
+                    currentCountryName = displayName;
+                    currentCoords = [e.latlng.lat, e.latlng.lng];
+
+                    clearSongDetails();
+                    if (sidebarCountryName) sidebarCountryName.textContent = displayName;
+
                     // Abre diretamente no Modo de Edição no local
                     switchToEditMode();
                     clearEditForm();
+                    if (sidebar) sidebar.classList.remove('hidden');
                 } else {
-                    // No GitHub Pages, mostra apenas um texto indicando que não há música
-                    switchToViewMode();
-                    if (sidebarArtistName) sidebarArtistName.textContent = 'Sem músicas vinculadas';
-                    if (spotifyPlayerWrapper) {
-                        spotifyPlayerWrapper.innerHTML = `
-                            <div style="text-align: center; color: var(--text-secondary); padding: 20px 0; border: 1px dashed rgba(255,255,255,0.1); border-radius: 8px;">
-                                <p style="margin: 0; font-size: 0.9rem;">Cadastros e edições só podem ser feitos a partir do painel administrativo local.</p>
-                            </div>
-                        `;
-                    }
+                    // No GitHub Pages, não abre nada e fecha a barra lateral se estiver aberta
+                    if (sidebar) sidebar.classList.add('hidden');
+                    resetHighlightStyle();
                 }
-                if (sidebar) sidebar.classList.remove('hidden');
             }
         }
     });
