@@ -86,9 +86,10 @@ const inputSongName = document.getElementById('input-song-name');
 const inputArtistName = document.getElementById('input-artist-name');
 const inputArtistImage = document.getElementById('input-artist-image');
 
-// Oculta o botão de edição se não estiver localmente
-if (!isLocal && btnEditMode) {
-    btnEditMode.style.display = 'none';
+// Remove os elementos de edição completamente do DOM se não estiver localmente
+if (!isLocal) {
+    if (btnEditMode) btnEditMode.remove();
+    if (sidebarEditMode) sidebarEditMode.remove();
 }
 
 // Fecha a barra lateral ao clicar no botão de fechar
