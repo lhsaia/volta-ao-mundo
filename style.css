@@ -1,0 +1,402 @@
+:root {
+    --bg-color: #0b0f19;
+    --card-bg: rgba(17, 24, 39, 0.7);
+    --border-color: rgba(255, 255, 255, 0.08);
+    --text-primary: #f3f4f6;
+    --text-secondary: #9ca3af;
+    --spotify-green: #1db954;
+    --spotify-green-hover: #1ed760;
+    --highlight-color: #00f2fe; /* Neon Cyan for highlighted countries */
+    --highlight-glow: rgba(0, 242, 254, 0.4);
+    --font-main: 'Inter', sans-serif;
+    --font-title: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    font-family: var(--font-main);
+    color: var(--text-primary);
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* App Layout */
+.app-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Floating Header */
+.main-header {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 40px);
+    max-width: 1200px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    background: var(--card-bg);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-logo h1 {
+    font-family: var(--font-title);
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.header-logo h1 span {
+    background: linear-gradient(135deg, var(--highlight-color), #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    background: rgba(0, 242, 254, 0.15);
+    border: 1px solid rgba(0, 242, 254, 0.3);
+    color: var(--highlight-color);
+    border-radius: 20px;
+}
+
+.header-stats {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-title);
+    font-size: 0.95rem;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+}
+
+.stat-value {
+    color: #fff;
+    font-weight: 800;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--spotify-green);
+    color: #000;
+    box-shadow: 0 4px 14px rgba(29, 185, 84, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: var(--spotify-green-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(29, 185, 84, 0.6);
+}
+
+.icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* Map Styling */
+.map-area {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    background-color: #05070d; /* Clean dark map background */
+}
+
+/* Sidebar Drawer */
+.sidebar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 380px;
+    height: calc(100% - 40px);
+    z-index: 1000;
+    background: var(--card-bg);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.sidebar.hidden {
+    transform: translateX(420px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.btn-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: none;
+    color: var(--text-primary);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    z-index: 10;
+}
+
+.btn-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.sidebar-content {
+    flex: 1;
+    padding: 30px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,0.2) transparent;
+}
+
+/* Country Badge */
+.country-badge {
+    align-self: flex-start;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    font-family: var(--font-title);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    color: var(--text-secondary);
+}
+
+/* Artist Image Cover */
+.artist-cover-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 16px;
+    overflow: visible;
+}
+
+.artist-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2;
+    position: relative;
+    background-color: #111; /* Dark background to prevent white rectangle before image loads */
+}
+
+.glow-effect {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(25px);
+    opacity: 0.6;
+    z-index: 1;
+    border-radius: 16px;
+    transition: background-image 0.5s ease;
+}
+
+/* Details Section */
+.song-details {
+    text-align: center;
+}
+
+.song-details h2 {
+    font-family: var(--font-title);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 6px;
+}
+
+.song-details h3 {
+    font-family: var(--font-main);
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+/* Spotify Player wrapper */
+.player-container {
+    margin-top: auto;
+    width: 100%;
+    min-height: 80px;
+}
+
+#spotify-player-wrapper iframe {
+    border-radius: 12px;
+    background-color: transparent;
+}
+
+/* Customizing Leaflet styles to match our theme */
+.leaflet-container {
+    font-family: var(--font-main) !important;
+}
+
+.leaflet-control-zoom {
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+}
+
+.leaflet-control-zoom-in, 
+.leaflet-control-zoom-out,
+.leaflet-control-zoom-reset {
+    background-color: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border: none !important;
+    transition: background-color 0.2s;
+    backdrop-filter: blur(10px);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.leaflet-control-zoom-in:hover, 
+.leaflet-control-zoom-out:hover,
+.leaflet-control-zoom-reset:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.leaflet-bar {
+    border: none !important;
+}
+
+.leaflet-control-attribution {
+    background: rgba(0,0,0,0.5) !important;
+    color: var(--text-secondary) !important;
+    backdrop-filter: blur(5px);
+}
+
+.leaflet-control-attribution a {
+    color: var(--highlight-color) !important;
+}
+
+/* Tooltips */
+.custom-tooltip {
+    background: rgba(11, 15, 25, 0.9) !important;
+    border: 1px solid var(--highlight-color) !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    padding: 6px 12px !important;
+    font-size: 0.85rem !important;
+    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.2) !important;
+    backdrop-filter: blur(5px);
+}
+
+.custom-tooltip::before {
+    border-right-color: rgba(11, 15, 25, 0.9) !important;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        gap: 12px;
+        border-radius: 20px;
+        top: 10px;
+        width: calc(100% - 20px);
+        padding: 12px 20px;
+    }
+    
+    .sidebar {
+        width: calc(100% - 20px);
+        left: 10px;
+        right: 10px;
+        height: 50vh;
+        bottom: 10px;
+        top: auto;
+    }
+
+    .sidebar.hidden {
+        transform: translateY(110%);
+    }
+
+    .artist-cover-container {
+        display: none; /* Hide artist image on mobile to save vertical space */
+    }
+}
+
+/* Remove default browser focus outline from clicked map shapes */
+path.leaflet-interactive:focus {
+    outline: none;
+}

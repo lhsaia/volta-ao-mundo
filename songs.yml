@@ -1,0 +1,343 @@
+playlist_geral: >-
+  https://open.spotify.com/playlist/6vh5rxQpFdMQwRTtkXEHUi?si=9SPlBsbmSAOnTGp0tEPfMw
+countries:
+  MDA:
+    name: Moldávia
+    song: Dragostea Din Tei
+    artist: O-Zone
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/O-Zone_member_compilation.jpg/500px-O-Zone_member_compilation.jpg
+    youtube_url: https://www.youtube.com/watch?v=YnopHCL1Jk8
+    youtube_id: YnopHCL1Jk8
+    coords:
+      - 47.0105
+      - 28.8638
+  CPV:
+    name: Cabo Verde
+    song: Sodade
+    artist: Cesária Évora
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Ces%C3%A1ria_%C3%89vora_%282457851527%29.jpg/500px-Ces%C3%A1ria_%C3%89vora_%282457851527%29.jpg
+    youtube_url: https://www.youtube.com/watch?v=ku_WZoTtT8Q
+    youtube_id: ku_WZoTtT8Q
+    coords:
+      - 15.1201
+      - -23.6052
+  BIH:
+    name: Bósnia e Herzegovina
+    song: Kažu
+    artist: Dubioza Kolektiv
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Dubioza_Kolektiv%2C_B90%2C_Gda%C5%84sk%2C_February_10_2023_57.jpg/500px-Dubioza_Kolektiv%2C_B90%2C_Gda%C5%84sk%2C_February_10_2023_57.jpg
+    youtube_url: https://www.youtube.com/watch?v=FZZJeMKJV3M
+    youtube_id: FZZJeMKJV3M
+    coords:
+      - 43.9159
+      - 17.6791
+  TTO:
+    name: Trinidad e Tobago
+    song: Starships
+    artist: Nicki Minaj
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Nicki_Minaj_2025_%283x4_cropped%29.jpg/500px-Nicki_Minaj_2025_%283x4_cropped%29.jpg
+    youtube_url: https://www.youtube.com/watch?v=SeIJmciN8mo
+    youtube_id: SeIJmciN8mo
+    coords:
+      - 10.6918
+      - -61.2225
+  BRB:
+    name: Barbados
+    song: Take a Bow
+    artist: Rihanna
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Rihanna_Fenty_2018.png/500px-Rihanna_Fenty_2018.png
+    youtube_url: https://www.youtube.com/watch?v=J3UjJ4wKLkg
+    youtube_id: J3UjJ4wKLkg
+    coords:
+      - 13.1939
+      - -59.5432
+  COL:
+    name: Colômbia
+    song: La Bicicleta
+    artist: Shakira, Carlos Vives
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2023-11-16_Gala_de_los_Latin_Grammy%2C_03_%28cropped%2902.jpg/500px-2023-11-16_Gala_de_los_Latin_Grammy%2C_03_%28cropped%2902.jpg
+    youtube_url: https://www.youtube.com/watch?v=-UV0QGLmYys
+    youtube_id: '-UV0QGLmYys'
+    coords:
+      - 4.5709
+      - -74.2973
+  ARG:
+    name: Argentina
+    song: Lamento Boliviano
+    artist: Los Enanitos Verdes
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Enanitos_Verdes_-_Rosario_-_2012.JPG/500px-Enanitos_Verdes_-_Rosario_-_2012.JPG
+    youtube_url: https://www.youtube.com/watch?v=_dRsmc8vDN0
+    youtube_id: _dRsmc8vDN0
+    coords:
+      - -38.4161
+      - -63.6167
+  MNG:
+    name: Mongólia
+    song: Yuve Yuve Yu
+    artist: The HU
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/2019_RiP_The_Hu_-_by_2eight_-_ZSC2060.jpg/500px-2019_RiP_The_Hu_-_by_2eight_-_ZSC2060.jpg
+    youtube_url: https://www.youtube.com/watch?v=v4xZUr0BEfE
+    youtube_id: v4xZUr0BEfE
+    coords:
+      - 46.8625
+      - 103.8467
+  LKA:
+    name: Sri Lanka
+    song: Mal Pan Podak
+    artist: Bathiya and Santhush (BNS)
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/0/0d/Bathiya_And_Santhush.jpg
+    youtube_url: https://www.youtube.com/watch?v=c6a7194LsFY
+    youtube_id: c6a7194LsFY
+    coords:
+      - 7.8731
+      - 80.7718
+  STP:
+    name: São Tomé e Príncipe
+    song: A Nossa Dança
+    artist: Calema
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Calema_at_Web_Summit_2022_%28cropped%29.jpg/500px-Calema_at_Web_Summit_2022_%28cropped%29.jpg
+    youtube_url: https://www.youtube.com/watch?v=0rDqkCe4bR8
+    youtube_id: 0rDqkCe4bR8
+    coords:
+      - 0.1864
+      - 6.6131
+  MOZ:
+    name: Moçambique
+    song: O Outro Lado da Lei
+    artist: Dama do Bling
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Flag_of_Mozambique.svg/500px-Flag_of_Mozambique.svg.png
+    youtube_url: https://www.youtube.com/watch?v=VRvTOAfBx40
+    youtube_id: VRvTOAfBx40
+    coords:
+      - -18.6657
+      - 35.5296
+  IDN:
+    name: Indonésia
+    song: Dan
+    artist: Sheila on 7
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Sheila_on_7.jpg/500px-Sheila_on_7.jpg
+    youtube_url: https://www.youtube.com/watch?v=dGcGbF4ex5o
+    youtube_id: dGcGbF4ex5o
+    coords:
+      - -0.7893
+      - 113.9213
+  PRT:
+    name: Portugal
+    song: Andorinhas
+    artist: Ana Moura
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/ANA_MOURA_-_140A0239_%28cropped%29.jpg/500px-ANA_MOURA_-_140A0239_%28cropped%29.jpg
+    youtube_url: https://www.youtube.com/watch?v=x3QGODFnM8A
+    youtube_id: x3QGODFnM8A
+    coords:
+      - 39.3999
+      - -8.2245
+  ESP:
+    name: Espanha
+    song: El Secreto de las Tortugas
+    artist: Maldita Nerea
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Maldita_Nerea_-_Rock_in_Rio_Madrid_2012_-_13.jpg/500px-Maldita_Nerea_-_Rock_in_Rio_Madrid_2012_-_13.jpg
+    youtube_url: https://www.youtube.com/watch?v=vVzYzjjOHdc
+    youtube_id: vVzYzjjOHdc
+    coords:
+      - 40.4637
+      - -3.7492
+  CAN:
+    name: Canadá
+    song: L'Amérique pleure
+    artist: Les Cowboys Fringants
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/2016-10_Les_Cowboys_fringants_Concert_metropolis_02.jpg/500px-2016-10_Les_Cowboys_fringants_Concert_metropolis_02.jpg
+    youtube_url: https://www.youtube.com/watch?v=F2uD7jJesRk
+    youtube_id: F2uD7jJesRk
+    coords:
+      - 56.1304
+      - -106.3468
+  ITA:
+    name: Itália
+    song: Semplicemente
+    artist: Zero Assoluto
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Zero_Assoluto_2.jpg/500px-Zero_Assoluto_2.jpg
+    youtube_url: https://www.youtube.com/watch?v=rDyn5kNqSpY
+    youtube_id: rDyn5kNqSpY
+    coords:
+      - 41.8719
+      - 12.5674
+  DEU:
+    name: Alemanha
+    song: Spieluhr
+    artist: Rammstein
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Rammstein_at_Wacken_Open_Air_2013_06.jpg/500px-Rammstein_at_Wacken_Open_Air_2013_06.jpg
+    youtube_url: https://www.youtube.com/watch?v=yJjt4Y5RpVQ
+    youtube_id: yJjt4Y5RpVQ
+    coords:
+      - 51.1657
+      - 10.4515
+  FRA:
+    name: França
+    song: Democrassie
+    artist: Trust
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/500px-Flag_of_France.svg.png
+    youtube_url: https://www.youtube.com/watch?v=1mFiXhAUFlg
+    youtube_id: 1mFiXhAUFlg
+    coords:
+      - 46.2276
+      - 2.2137
+  BGR:
+    name: Bulgária
+    song: KRASIVI LAJI / КРАСИВИ ЛЪЖИ
+    artist: KRISKO & GALENA
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Galena_Sofia_Pride_2019_1.png/500px-Galena_Sofia_Pride_2019_1.png
+    youtube_url: https://www.youtube.com/watch?v=edDTNNgOORI
+    youtube_id: edDTNNgOORI
+    coords:
+      - 42.7339
+      - 25.4858
+  ISL:
+    name: Islândia
+    song: Esjan
+    artist: Bríet
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Flag_of_Iceland.svg/500px-Flag_of_Iceland.svg.png
+    youtube_url: https://www.youtube.com/watch?v=HC5wAZrsRrE
+    youtube_id: HC5wAZrsRrE
+    coords:
+      - 64.9631
+      - -19.0208
+  IRL:
+    name: Irlanda
+    song: One
+    artist: U2
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/e/eb/U2_at_the_Joshua_Tree_Tour_2017_in_Brussels_-_%2835978184581%29.jpg/500px-U2_at_the_Joshua_Tree_Tour_2017_in_Brussels_-_%2835978184581%29.jpg
+    youtube_url: https://www.youtube.com/watch?v=VGkFuXOxz_g
+    youtube_id: VGkFuXOxz_g
+    coords:
+      - 53.4129
+      - -8.2439
+  GBR:
+    name: Reino Unido
+    song: Bohemian Rhapsody
+    artist: Queen
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Queen_concert_in_Frankfurt_1984.jpg/500px-Queen_concert_in_Frankfurt_1984.jpg
+    youtube_url: https://www.youtube.com/watch?v=s7CIXNqoCEE
+    youtube_id: s7CIXNqoCEE
+    coords:
+      - 55.3781
+      - -3.436
+  US-WV:
+    name: West Virginia (EUA)
+    song: Find Yourself
+    artist: Brad Paisley
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/5/58/Brad_Paisley_at_the_White_House.jpg
+    youtube_url: https://www.youtube.com/watch?v=2Hqt6lp2PsU
+    youtube_id: 2Hqt6lp2PsU
+    coords:
+      - 38.5976
+      - -80.4549
+  CHN:
+    name: China
+    song: Wo Men Bu Yi Yang (我们不一样)
+    artist: Da Zhuang
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/500px-Flag_of_the_People%27s_Republic_of_China.svg.png
+    youtube_url: https://www.youtube.com/watch?v=Sm3S3NibJl8
+    youtube_id: Sm3S3NibJl8
+    coords:
+      - 35.8617
+      - 104.1954
+  RUS:
+    name: Russia
+    song: Менуэт
+    artist: Чиж & Ko
+    artist_image: >-
+      https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0a-CeqVEGzc-dDtiggKX8b7OlYp2CAFdqKtJvEKVHpZYuC5ef9fEjbhE&s=10
+    youtube_url: https://www.youtube.com/watch?v=6tWXKkK4quA
+    youtube_id: 6tWXKkK4quA
+    coords:
+      - 58.35793865159586
+      - 91.49414062500001
+  US-NM:
+    name: New Mexico (EUA)
+    song: Take Me Home, Country Roads
+    artist: John Denver
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/John_Denver_1974.jpg/500px-John_Denver_1974.jpg
+    youtube_url: https://www.youtube.com/watch?v=IUmnTfsY3hI
+    youtube_id: IUmnTfsY3hI
+    coords:
+      - 33.80617088688668
+      - -105.38085937500001
+  ZAF:
+    name: South Africa
+    song: Ibhanoyi
+    artist: Blaq Diamond
+    artist_image: ''
+    youtube_url: https://www.youtube.com/watch?v=rgwhXtT4T70
+    youtube_id: rgwhXtT4T70
+    coords:
+      - -30.751277776257812
+      - 23.5546875
+  BR-PA:
+    name: Pará (Brasil)
+    song: Voando Pro Pará
+    artist: Joelma
+    artist_image: >-
+      https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQVJndBC2rtJiDPQd3GCG2KnjijqiXR8Lq78cmSa6BcA&s=10
+    youtube_url: https://www.youtube.com/watch?v=wR3jqHayULY
+    youtube_id: wR3jqHayULY
+    coords:
+      - -4.214943141390639
+      - -52.73437500000001
+  BR-DF:
+    name: Distrito Federal (Brasil)
+    song: Tempo Perdido
+    artist: Legião Urbana
+    artist_image: >-
+      https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0E7ozzC9Zo36eW7lW5ba6ph1XNJ4AxnA9HgqNf6bImA&s
+    youtube_url: https://www.youtube.com/watch?v=zpzoG5KGaHg
+    youtube_id: zpzoG5KGaHg
+    coords:
+      - -15.788031909205852
+      - -47.54003986716271
+  BR-AL:
+    name: Alagoas (Brasil)
+    song: Oceano
+    artist: Djavan
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Djavan_San_Javier_Jazz_2023_26_%28cropped%29.jpg/500px-Djavan_San_Javier_Jazz_2023_26_%28cropped%29.jpg?utm_source=pt.wikipedia.org&utm_campaign=parser&utm_content=thumbnail
+    youtube_url: https://www.youtube.com/watch?v=MWh78SM5G7k
+    youtube_id: MWh78SM5G7k
+    coords:
+      - -9.578685392306744
+      - -36.12304687500001
+  IND:
+    name: India
+    song: Tunak Tunak Tun
+    artist: Daler Mehndi
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Daler_Mehndi_on_Stage.jpg/500px-Daler_Mehndi_on_Stage.jpg?utm_source=pt.wikipedia.org&utm_campaign=parser&utm_content=thumbnail
+    youtube_url: https://www.youtube.com/watch?v=viMEhOWcxd0
+    youtube_id: viMEhOWcxd0
+    coords:
+      - 23.41534214830711
+      - 77.34375000000001

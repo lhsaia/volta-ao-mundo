@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volta ao Mundo - Mapa Musical</title>
+    <meta name="description" content="Um mapa interativo para explorar músicas típicas ou marcantes de cada país do mundo.">
+    <meta name="referrer" content="no-referrer">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Outfit:wght@400;600;800;900&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Floating Header -->
+        <header class="main-header">
+            <div class="header-logo">
+                <h1>Volta ao <span>Mundo</span></h1>
+                <span class="badge">Music Map</span>
+            </div>
+            
+            <div class="header-stats">
+                <span class="stat-label">Países Explorados:</span>
+                <span id="stats-counter" class="stat-value">0</span>
+            </div>
+
+            <div class="header-actions">
+                <a id="btn-playlist-geral" href="#" target="_blank" class="btn btn-primary">
+                    <svg viewBox="0 0 24 24" class="icon"><path fill="currentColor" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.565.387-.86.207-2.377-1.454-5.37-1.783-8.894-.982-.336.076-.67-.135-.746-.47-.077-.337.135-.67.472-.747 3.852-.88 7.15-.51 9.817 1.126.295.18.387.563.207.86zm1.224-2.72c-.227.367-.707.487-1.074.26-2.72-1.672-6.87-2.157-10.082-1.182-.413.125-.85-.107-.975-.52-.125-.413.107-.85.52-.975 3.665-1.11 8.233-.574 11.353 1.347.367.226.487.707.26 1.07zm.106-2.825C14.738 8.932 9.48 8.757 6.438 9.68a.936.936 0 0 1-1.173-.62c-.156-.514.137-1.062.65-1.218 3.504-1.063 9.31-.86 13.064 1.37a.937.937 0 0 1 .326 1.28c-.255.424-.805.565-1.23.31z"/></svg>
+                    Playlist Completa
+                </a>
+            </div>
+        </header>
+
+        <!-- Main Map Area -->
+        <main class="map-area">
+            <div id="map"></div>
+        </main>
+
+        <!-- Glassmorphic Details Sidebar -->
+        <aside id="song-sidebar" class="sidebar hidden">
+            <button id="close-sidebar" class="btn-close" aria-label="Fechar painel">×</button>
+            
+            <div class="sidebar-content">
+                <div class="country-badge">
+                    <span id="sidebar-country-name">Nome do País</span>
+                </div>
+
+                <!-- Modo Visualização -->
+                <div id="sidebar-view-mode" style="display: flex; flex-direction: column; gap: 24px;">
+                    <a id="sidebar-image-link" href="#" target="_blank" style="display: block; width: 100%; text-decoration: none;">
+                        <div class="artist-cover-container">
+                            <img id="sidebar-artist-image" src="" alt="" class="artist-cover">
+                            <div class="glow-effect" id="artist-glow"></div>
+                        </div>
+                    </a>
+
+                    <div class="song-details">
+                        <h2><a id="sidebar-song-link" href="#" target="_blank" style="text-decoration: none; color: inherit; transition: opacity 0.2s;">Nome da Música</a></h2>
+                        <h3 id="sidebar-artist-name">Nome do Artista</h3>
+                    </div>
+
+                    <div class="player-container">
+                        <div id="spotify-player-wrapper"></div>
+                    </div>
+
+                    <button id="btn-edit-mode" class="btn btn-secondary" style="width: 100%; justify-content: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">
+                        ✏️ Editar Música
+                    </button>
+                </div>
+
+                <!-- Modo Edição -->
+                <div id="sidebar-edit-mode" class="hidden" style="display: flex; flex-direction: column; gap: 15px;">
+                    <div class="form-group">
+                        <label for="input-youtube-url" style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 5px;">Link do YouTube</label>
+                        <input type="text" id="input-youtube-url" placeholder="Cole o link do YouTube aqui..." style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: #fff; font-size: 0.9rem;">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="input-song-name" style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 5px;">Nome da Música</label>
+                        <input type="text" id="input-song-name" placeholder="Ex: Take Me Home, Country Roads" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: #fff; font-size: 0.9rem;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-artist-name" style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 5px;">Artista</label>
+                        <input type="text" id="input-artist-name" placeholder="Ex: John Denver" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: #fff; font-size: 0.9rem;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="input-artist-image" style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 5px;">URL da Imagem do Artista (Opcional)</label>
+                        <input type="text" id="input-artist-image" placeholder="Link da foto (Wikipédia, etc.)" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.2); color: #fff; font-size: 0.9rem;">
+                    </div>
+
+                    <div class="form-actions" style="display: flex; gap: 10px; margin-top: 10px;">
+                        <button id="btn-save-song" class="btn btn-primary" style="flex: 1; justify-content: center;">Salvar</button>
+                        <button id="btn-cancel-edit" class="btn btn-secondary" style="flex: 1; justify-content: center; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    
+    <!-- JS-YAML CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+
+    <!-- Main JavaScript App -->
+    <script src="app.js"></script>
+</body>
+</html>

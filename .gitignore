@@ -1,0 +1,8 @@
+# Logs
+php_debug.log
+*.log
+
+# OS files
+Thumbs.db
+db.properties
+.DS_Store
