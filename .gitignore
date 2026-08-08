@@ -6,3 +6,6 @@ php_debug.log
 Thumbs.db
 db.properties
 .DS_Store
+
+# Agent rules
+.geminirules

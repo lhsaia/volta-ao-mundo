@@ -1,5 +1,0 @@
-# Regras do Antigravity para este Projeto
-
-- NUNCA imprima caracteres de carregamento ou progresso (como "_", "@", "Progress:") no chat.
-- Sempre responda de forma limpa, objetiva e direta em Markdown.
-- Evite loops ou simulações visuais de carregamento em segundo plano no corpo da mensagem de texto.
