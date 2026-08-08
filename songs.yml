@@ -113,12 +113,12 @@ countries:
       - 6.6131
   MOZ:
     name: Moçambique
-    song: O Outro Lado da Lei
-    artist: Dama do Bling
+    song: Xitchuketa Marrabenta
+    artist: Stewart Sukuma
     artist_image: >-
-      https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Flag_of_Mozambique.svg/500px-Flag_of_Mozambique.svg.png
-    youtube_url: https://www.youtube.com/watch?v=VRvTOAfBx40
-    youtube_id: VRvTOAfBx40
+      https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfz3iYXWxDTGR9-sWxth-Q0Yo4VV6mV87eaOxc5phckA&s=10
+    youtube_url: https://www.youtube.com/watch?v=emweviI8koU
+    youtube_id: emweviI8koU
     coords:
       - -18.6657
       - 35.5296
@@ -396,3 +396,58 @@ countries:
     coords:
       - -23.877190215213897
       - -47.81250000000001
+  ETH:
+    name: Ethiopia
+    song: Checheho
+    artist: Aster Aweke
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/0/08/Aster_Aweke.jpeg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled
+    youtube_url: https://www.youtube.com/watch?v=N1umoRjl2zI
+    youtube_id: N1umoRjl2zI
+    coords:
+      - 8.842625575491557
+      - 38.14453125000001
+  TZA:
+    name: United Republic of Tanzania
+    song: Jeje
+    artist: Diamond Platnumz
+    artist_image: >-
+      https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBOm6KC2ihOFcaLBQ5TGNZpi1KIdVRrGu9m5afDGrXCw&s
+    youtube_url: https://www.youtube.com/watch?v=g5rFro4XdZ0
+    youtube_id: g5rFro4XdZ0
+    coords:
+      - -5.9606734311959535
+      - 35.15625000000001
+  KEN:
+    name: Kenya
+    song: Suzanna
+    artist: Sauti Sol
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Sauti-Sol.jpg/960px-Sauti-Sol.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail
+    youtube_url: https://www.youtube.com/watch?v=mFBJtuQ1Llc
+    youtube_id: mFBJtuQ1Llc
+    coords:
+      - 2.54568906992374
+      - 39.02343750000001
+  ZWE:
+    name: Zimbabwe
+    song: Neria
+    artist: Oliver Mtukudzi
+    artist_image: >-
+      https://upload.wikimedia.org/wikipedia/commons/1/16/Oliver_Mtukudzi.jpg?utm_source=pt.wikipedia.org&utm_campaign=parser&utm_content=thumbnail_unscaled
+    youtube_url: https://www.youtube.com/watch?v=WgBRuNfzpTA
+    youtube_id: WgBRuNfzpTA
+    coords:
+      - -18.9561646104891
+      - 30.937500000000004
+  COD:
+    name: Democratic Republic of the Congo
+    song: Loi
+    artist: Koffi Olomide
+    artist_image: >-
+      https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpVC-lxrElza1KzaLEvXY3i33cLblp7SYhmL8ajC-Gdg&s
+    youtube_url: https://www.youtube.com/watch?v=ETzJwQlXTsE
+    youtube_id: ETzJwQlXTsE
+    coords:
+      - -3.7716391294495546
+      - 23.5546875
