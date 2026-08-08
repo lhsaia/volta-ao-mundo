@@ -264,12 +264,24 @@ function resetHighlight(e) {
     
     // Se for o país/estado que está atualmente aberto no sidebar, mantemos um destaque visual diferente
     if (activeHighlightedFeature === layer) {
-        layer.setStyle({
-            fillColor: '#1ed760',
-            fillOpacity: 0.95,
-            weight: 2,
-            color: '#00f2fe'
-        });
+        const code = getFeatureCode(layer.feature);
+        const hasSong = songsData.countries && songsData.countries[code];
+        if (hasSong) {
+            layer.setStyle({
+                fillColor: '#1ed760',
+                fillOpacity: 0.95,
+                weight: 2,
+                color: '#00f2fe'
+            });
+        } else {
+            // Se for um país vazio que está em destaque para edição local, mantém a cor ciano
+            layer.setStyle({
+                fillColor: '#00f2fe',
+                fillOpacity: 0.5,
+                weight: 2,
+                color: '#00f2fe'
+            });
+        }
         return;
     }
 
